@@ -51,6 +51,7 @@ import org.evosuite.coverage.mutation.*;
 import org.evosuite.coverage.readability.ReadabilitySuiteFitness;
 import org.evosuite.coverage.rho.RhoCoverageFactory;
 import org.evosuite.coverage.rho.RhoCoverageSuiteFitness;
+import org.evosuite.coverage.rrt.RRTFactory;
 import org.evosuite.coverage.statement.StatementCoverageFactory;
 import org.evosuite.coverage.statement.StatementCoverageSuiteFitness;
 import org.evosuite.regression.RegressionSuiteFitness;
@@ -189,6 +190,8 @@ public class FitnessFunctions {
 			return new InputCoverageFactory();
 		case TRYCATCH:
 			return new TryCatchCoverageFactory();
+		case RRT:
+			return new RRTFactory();
 		default:
 			logger.warn("No TestFitnessFactory defined for " + crit
 			        + " using default one (BranchCoverageFactory)");

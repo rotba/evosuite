@@ -37,6 +37,7 @@ import org.evosuite.ga.stoppingconditions.MaxStatementsStoppingCondition;
 import org.evosuite.graphs.GraphPool;
 import org.evosuite.graphs.cfg.BytecodeInstructionPool;
 import org.evosuite.graphs.cfg.CFGMethodAdapter;
+import org.evosuite.instrumentation.BuggyClassLoader;
 import org.evosuite.instrumentation.InstrumentingClassLoader;
 import org.evosuite.instrumentation.LinePool;
 import org.evosuite.runtime.Runtime;
@@ -80,6 +81,13 @@ public class TestGenerationContext {
 	private InstrumentingClassLoader classLoader;
 
 	/**
+	* This is the classloader that simulates the running under a buggy version of the SUT.
+ 	* Required when RRT criterion is desired to cover
+	*/
+
+	private BuggyClassLoader buggyClassLoader;
+
+	/**
 	 * The regression class loader
 	 */
 	private InstrumentingClassLoader regressionClassLoader;
@@ -101,7 +109,7 @@ public class TestGenerationContext {
 		originalClassLoader = this.getClass().getClassLoader();
 		classLoader = new InstrumentingClassLoader();
 		regressionClassLoader = new InstrumentingClassLoader(true);
-
+//		buggyClassLoader = new BuggyClassLoader(classLoader, );
 		DBManager.getInstance().setSutClassLoader(classLoader);
 	}
 
@@ -133,6 +141,10 @@ public class TestGenerationContext {
 
 	public InstrumentingClassLoader getClassLoaderForSUT() {
 		return classLoader;
+	}
+
+	public BuggyClassLoader getBuggyClassLoaderForSUT() {
+		return buggyClassLoader;
 	}
 
 	public InstrumentingClassLoader getRegressionClassLoaderForSUT() {

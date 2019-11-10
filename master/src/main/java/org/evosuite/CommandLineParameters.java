@@ -107,7 +107,10 @@ public class CommandLineParameters {
 				"target classpath for test generation. Either a jar file or a folder where to find the .class files");
 
 		Option projectCP = new Option("projectCP", true,
-				"classpath of the project under test and all its dependencies");		
+				"classpath of the project under test and all its dependencies");
+
+		Option buggyProjectCP = new Option("buggyProjectCP", true,
+				"classpath of the project under test and all its dependencies in it's buggy version");
 		
 		Option evosuiteCP = new Option("evosuiteCP", true,
 				"classpath of EvoSuite jar file(s). This is needed when EvoSuite is called in plugins like Eclipse/Maven");
@@ -152,6 +155,7 @@ public class CommandLineParameters {
 		options.addOption(base_dir);
 		options.addOption(property);
 		options.addOption(projectCP);
+		options.addOption(buggyProjectCP);
 		options.addOption(heapDump);
 		options.addOption(startedByCtg);
 
