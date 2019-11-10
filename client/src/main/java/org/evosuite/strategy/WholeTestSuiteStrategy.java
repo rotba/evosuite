@@ -30,6 +30,7 @@ import org.evosuite.graphs.cfg.CFGMethodAdapter;
 import org.evosuite.result.TestGenerationResultBuilder;
 import org.evosuite.rmi.ClientServices;
 import org.evosuite.rmi.service.ClientState;
+import org.evosuite.rrt.RRTSuiteFitness;
 import org.evosuite.setup.TestCluster;
 import org.evosuite.statistics.RuntimeVariable;
 import org.evosuite.testcase.TestFitnessFunction;
@@ -51,6 +52,7 @@ import java.util.List;
  *
  */
 public class WholeTestSuiteStrategy extends TestGenerationStrategy {
+	private static boolean BP_TMP_DEBUG =false;
 
 	@Override
 	public TestSuiteChromosome generateTests() {
@@ -66,6 +68,7 @@ public class WholeTestSuiteStrategy extends TestGenerationStrategy {
 
 		// What's the search target
 		List<TestSuiteFitnessFunction> fitnessFunctions = getFitnessFunctions();
+		if(BP_TMP_DEBUG) fitnessFunctions.add(new RRTSuiteFitness());
 
 		// TODO: Argh, generics.
 		algorithm.addFitnessFunctions((List)fitnessFunctions);

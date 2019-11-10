@@ -273,7 +273,7 @@ public class TestGeneration {
 			// enabling debugging mode to e.g. connect the eclipse remote debugger to the given port
 			cmdLine.add("-Ddebug=true");
 			cmdLine.add("-Xdebug");
-			cmdLine.add("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address="
+			cmdLine.add("-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address="
 			        + Properties.PORT);
 			LoggingUtils.getEvoLogger().info("* Waiting for remote debugger to connect on port "
 			                                         + Properties.PORT + "..."); // TODO find the right

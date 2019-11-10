@@ -223,7 +223,7 @@ public class CommandLineParameters {
 		}
 
 		if(cpEntries != null){
-			ClassPathHandler.getInstance().changeTargetClassPath(cpEntries);
+				ClassPathHandler.getInstance().changeTargetClassPath(cpEntries);
 		}
 		
 		if (line.hasOption("target")) {
