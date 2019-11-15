@@ -16,6 +16,9 @@ public class EvoSuiteTest {
                         "-criterion",
                         "BRANCH:EXCEPTION:METHOD",
                         "-Dtest_dir=C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\MavenProj\\MavenProj\\sub_mod_1\\.evosuite\\best-tests",
+                        "-regressionSuite",
+                        "-Dregressioncp='..\\regression\\MavenProj\\sub_mod_1\\target\\classes;..\\regression\\MavenProj\\sub_mod_1\\target\\dependency'",
+                        "-Dregression_fitness=ALL_MEASURES",
                         "-seed=3333333",
                         "-Ddebug=true"
                 }
