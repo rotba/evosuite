@@ -18,8 +18,9 @@ public class EvoSuiteTest {
                         "-Dtest_dir=C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\MavenProj\\MavenProj\\sub_mod_1\\.evosuite\\best-tests",
                         "-regressionSuite",
                         "-Dregressioncp=C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\MavenProj\\regression\\MavenProj\\sub_mod_1\\target\\classes;C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\MavenProj\\regression\\MavenProj\\sub_mod_1\\target\\dependency",
-                        "-Dregression_fitness=ALL_MEASURES",
-                        "-seed=3333333"
+                        "-Dregression_fitness=RANDOM",
+                        "-seed=3333333",
+                        "-Ddebug=true"
                 }
         );
     }
