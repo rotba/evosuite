@@ -232,9 +232,9 @@ public class MonotonicGA<T extends Chromosome> extends GeneticAlgorithm<T> {
 			bestFitness = 0.0;
 			lastBestFitness = 0.0;
 		}
-
-		while (!isFinished()) {
-			
+		int rotem =1;
+		while (!isFinished() && rotem >0) {
+			rotem--;
 			logger.info("Population size before: " + population.size());
 			// related to Properties.ENABLE_SECONDARY_OBJECTIVE_AFTER;
 			// check the budget progress and activate a secondary criterion

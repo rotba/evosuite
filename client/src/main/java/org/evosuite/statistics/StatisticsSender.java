@@ -88,8 +88,11 @@ public class StatisticsSender {
 
 		for (TestChromosome test : testSuite.getTestChromosomes()) {
 			if (test.getLastExecutionResult() == null) {
+				testSuite.toString();
 				ExecutionResult result = TestCaseExecutor.runTest(test.getTestCase());
+				testSuite.toString();
 				test.setLastExecutionResult(result);
+				testSuite.toString();
 			}
 		}
 

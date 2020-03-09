@@ -61,6 +61,7 @@ public class RegressionAssertionCounter {
     assertionComments.clear();
     int numAssertions = getNumAssertions(individual, true);
 
+
     if (numAssertions > 0) {
       logger.debug("num assertions bigger than 0");
 

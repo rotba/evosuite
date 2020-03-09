@@ -509,8 +509,8 @@ public class TestSuiteGenerator {
 				}
 			}
 		}
-
-		if (Properties.ASSERTIONS && !Properties.isRegression()) {
+		final boolean ROTEM = false;
+		if ((Properties.ASSERTIONS && !Properties.isRegression() )||ROTEM) {
 			LoggingUtils.getEvoLogger().info("* Generating assertions");
 			// progressMonitor.setCurrentPhase("Generating assertions");
 			ClientServices.getInstance().getClientNode().changeState(ClientState.ASSERTION_GENERATION);

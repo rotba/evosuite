@@ -13,13 +13,51 @@ public class EvoSuiteTest {
                         "-projectCP","C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\MavenProj\\MavenProj\\sub_mod_1\\target\\classes;C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\MavenProj\\MavenProj\\sub_mod_1\\target\\dependency",
                         "-class", "p_1.Amit",
                         "-Dassertion_strategy=ALL",
-                        "-criterion",
-                        "BRANCH:EXCEPTION:METHOD",
+                        "-criterion","BRANCH:EXCEPTION:METHOD",
                         "-Dtest_dir=C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\MavenProj\\MavenProj\\sub_mod_1\\.evosuite\\best-tests",
                         "-regressionSuite",
                         "-Dregressioncp=C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\MavenProj\\regression\\MavenProj\\sub_mod_1\\target\\classes;C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\MavenProj\\regression\\MavenProj\\sub_mod_1\\target\\dependency",
-                        "-Dregression_fitness=RANDOM",
+//                        "-Dregression_fitness=STATE_DIFFERENCE",
                         "-seed=3333333",
+//                        "-seed=77777777",
+                        "-Ddebug=true"
+                }
+        );
+    }
+
+    @Test
+    public void main3() {
+        EvoSuite.main(
+                new String[]{
+                        "-projectCP","C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\MavenProj\\MavenProj\\sub_mod_1\\target\\classes;C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\MavenProj\\MavenProj\\sub_mod_1\\target\\dependency",
+                        "-class", "p_1.Dima",
+                        "-Dassertion_strategy=ALL",
+                        "-criterion","BRANCH:EXCEPTION:METHOD",
+                        "-Dtest_dir=C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\MavenProj\\MavenProj\\sub_mod_1\\.evosuite\\best-tests",
+                        "-regressionSuite",
+                        "-Dregressioncp=C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\MavenProj\\regression\\MavenProj\\sub_mod_1\\target\\classes;C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\MavenProj\\regression\\MavenProj\\sub_mod_1\\target\\dependency",
+                        "-Dregression_fitness=STATE_DIFFERENCE",
+                        "-seed=3333333",
+//                        "-seed=77777777",
+                        "-Ddebug=true"
+                }
+        );
+    }
+
+    @Test
+    public void main4() {
+        EvoSuite.main(
+                new String[]{
+                        "-projectCP","C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\commons-math\\commons-math\\target\\classes;C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\commons-math\\commons-math\\target\\dependency",
+                        "-class", "org.apache.commons.math.ConvergingAlgorithmImpl",
+                        "-Dassertion_strategy=ALL",
+                        "-criterion","BRANCH:EXCEPTION:METHOD",
+                        "-Dtest_dir=C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\commons-math\\commons-math\\.evosuite\\best-tests",
+                        "-regressionSuite",
+                        "-Dregressioncp=C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\commons-math\\regression\\commons-math\\target\\classest\\dependency;C:\\Code\\Lab\\BugMiner\\test\\tested_projects\\commons-math\\regression\\commons-math\\target\\dependency",
+                        "-Dregression_fitness=STATE_DIFFERENCE",
+                        "-seed=3333333",
+//                        "-seed=77777777",
                         "-Ddebug=true"
                 }
         );
